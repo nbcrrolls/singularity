@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="no"?>
+
+<kickstart>
+
+
+	<description>
+	Your singularity roll description here
+	</description>
+
+	<copyright>
+	Copyright (c) 2000 - 2014 The Regents of the University of California.
+	All rights reserved. Rocks(r) 6.2 www.rocksclusters.org
+	
+	</copyright>
+
+	<changelog>
+	$Log$
+	</changelog>
+
+	<package>singularity</package>
+	<package>singularity-devel</package>
+
+<post>
+if [ -f /etc/singularity/singularity.conf ]; then
+    sed -i '109ibind path = /data' /etc/singularity/singularity.conf 
+    sed -i '110ibind path = /state' /etc/singularity/singularity.conf 
+fi
+</post>
+
+</kickstart>
